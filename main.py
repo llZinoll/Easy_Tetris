@@ -1,5 +1,6 @@
 import pygame,sys
 from function import *
+from blocks import *
 
 pygame.init()
 red = (255, 0, 0)
@@ -11,7 +12,8 @@ pygame.display.set_caption("Python tetris")
 clock = pygame.time.Clock()
 
 game_grid = Grid()
-game_grid.print_grid()
+
+block = TBlock()
 
 #game loop
 while True:
@@ -22,5 +24,7 @@ while True:
     #Drawing
     screen.fill(red)
     game_grid.draw(screen)
+    block.draw(screen)
+
     pygame.display.update()
     clock.tick(60)
